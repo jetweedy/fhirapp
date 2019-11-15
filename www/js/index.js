@@ -26,7 +26,10 @@ function runTest() {
 				var table = $("<table>");
 				table.append($("<tr><th>First</th><th>Last</th><th>Phone</th></tr>"));
 				for (var p in x) {
-					table.append($("<tr><td>"+x[p].firstname+"</td><td>"+x[p].lastname+"</td><td>"+x[p].phone+"</td></tr>"));
+					table.append($("<tr><td>"
+						+x[p].firstname+"</td><td>"
+						+x[p].lastname+"</td><td>"
+						+x[p].phone+"</td></tr>"));
 				}
 				$("#fhirapp").append(table);
 			} catch(er) {
