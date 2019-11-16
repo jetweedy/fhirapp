@@ -29,7 +29,11 @@ function runSearchName(sn) {
 	try {
 		$.get("https://pyfhir.herokuapp.com/getdata/"+sn, function(x) {
 			patients = x;
-			drawPatients(x);
+			if (x.length > 0) {
+				drawPatients(x);
+			} else {
+				alert("No matches found!");
+			}
 		});
 	} catch(er) {
 		alert("issue with get");
@@ -58,6 +62,7 @@ var app = {
 				$("#searchbutton").on("click", function() {
 					runSearchName( $("#searchname").val() );
 				});
+				initSpeechReco();
 				break;
 			default:
 				break;
