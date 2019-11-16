@@ -26,18 +26,16 @@ function runSearchName(sn) {
 	$("#fhirapp").html("");
 	var img = $("<img>").attr("src", "img/loading.gif");
 	$("#fhirapp").append( img );
-	try {
-		$.get("https://pyfhir.herokuapp.com/getdata/"+sn, function(x) {
-			patients = x;
-			if (x.length > 0) {
-				drawPatients(x);
-			} else {
-				alert("No matches found!");
-			}
-		});
-	} catch(er) {
-		alert("issue with get");
-	}
+	$.get("https://pyfhir.herokuapp.com/getdata/"+sn, function(x) {
+		alert("test");
+		patients = x;
+		alert( JSON.stringify(x) );
+		if (x.length > 0) {
+			drawPatients(x);
+		} else {
+			$("#fhirapp").html("No matches found. :(");
+		}
+	});
 }
 
 
