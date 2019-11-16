@@ -27,9 +27,7 @@ function runSearchName(sn) {
 	var img = $("<img>").attr("src", "img/loading.gif");
 	$("#fhirapp").append( img );
 	$.get("https://pyfhir.herokuapp.com/getdata/"+sn, function(x) {
-		alert("test");
 		patients = x;
-		alert( JSON.stringify(x) );
 		if (x.length > 0) {
 			drawPatients(x);
 		} else {
