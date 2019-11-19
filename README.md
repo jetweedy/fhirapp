@@ -1,6 +1,6 @@
 # fhirapp
 
-
+This corresponds to a mobile app demo for the FHIR workshop. (Would need to be compiled using instructions below.)
 
 ## Cordova Instructions
 
